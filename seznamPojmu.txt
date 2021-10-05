@@ -1,0 +1,92 @@
+"pohlaví", "věk", "vzdělání", "příjem", "počet dětí", "počet osob v domácnosti",
+          "počet knih v domácí knihovně",
+          "délka spánku", "zdravotní stav", "spokojenost se životem",
+
+          "míra samostatnosti", "znalost soc. služeb", "intenzita užívání soc. služeb",
+          "frekvence užívání soc. služeb", "spokojenost se soc. službami", "zájem o politiku",
+          "vlastnictví mobilního telefonu", "vlastnictví TV přijímače", "intenzita sledování TV",
+          "intenzita užívání sociálních sítí",
+
+          "uplatnění vlastní vůle při řešení situace",
+          "předsudky", "lidská práva", "osobní svobody",
+          "znalost právních norem",
+          "znalost vlastních práv",
+          "přijímání darů", "dávání darů",
+          "podmínky poskytování služby",
+          "možnosti poskytování služby",
+
+          "osobní cíle", "informovanost", "porozumění obsahu a účelu smlouvy",
+          "forma stížnosti", "způsob vyřízení stížnosti",
+          "informovanost zaměstnanců o možnostech stížností",
+          "evidence stížností", "prošetření vyřizování stížností",
+          "příležitost využít běžně dostupné veřejné služby",
+          "zprostředkování služeb",
+
+          "kontakty s přirozeným sociálním prostředím",
+          "vztahy s přirozeným sociálním prostředím",
+          "počet zaměstnanců", "počet úvazků zaměstnanců",
+          "kvalifikační požadavky na zaměstnance",
+          "osobnostní předpoklady zaměstnanců",
+          "zaškolování nových zaměstnanců", "kapacita služby",
+          "pravidelné hodnocení zaměstnanců",
+          "program dalšího vzdělávání zaměstnanců",
+
+          "systém finančního oceňování zaměstnanců",
+          "systém morálního oceňování zaměstnanců",
+          "podpora zaměstnanců od nezávislého odborníka",
+          "místo poskytování služby",
+          "čas poskytování služby",
+          "materiální podmínky služby", "technické podmínky služby",
+          "hygienické podmínky služby",
+          "důstojné prostředí", "nouzová situace",
+
+          "havarijní situace", "řešení situace",
+          "seznámení zaměstnanců s řešením nouzové situace",
+          "seznámení klientů s řešením nouzové situace",
+          "seznámení klientů s řešením havarijní situace",
+          "kvalita služby", "poslání služby", "cíle služby",
+          "odcizení", "sociální struktura",
+
+          "sociální aktér", "bída", "blahobyt", "masa",
+          "cirkulace elit", "marginalizace", "dav", "dědictví",
+          "disent", "diskriminace",
+
+          "distance", "degradace", "diferenciace", "dynamika", "elita", "gang",
+          "sociální hierarchie", "status", "statusová inkonzistence", "instituce",
+
+          "inteligence", "kariéra", "kasta", "klan", "kmen", "kolektiv", "klientelismus",
+          "kolektiv", "komunita", "krystalizace statusu",
+
+          "meritokracie", "sociální mobilita", "sociální nerovnost(i)", "organizace",
+          "privilegium", "příbuzenství", "rodina", "sociální síť",
+          "skupina", "sousedství",
+
+          "společenství", "společnost", "spolek", "spravedlnost", "stabilita", "stát",
+          "politická strana", "stratifikace", "třída", "adaptace",
+
+          "agrese", "altruismus", "alokace", "askeze", "aspirace", "atraktivita",
+          "autorita", "stereotyp", "dar", "důstojnost",
+
+          "důvěra", "dysfunkce", "egoismus", "euforie", "existence", "exkluze", "funkce",
+          "harmonie", "hodnota", "hra",
+
+          "charisma", "chování", "individualismus", "indoktrinace", "infiltrace",
+          "internalizace", "jednání", "kapitál", "kulturní kapitál", "ekonomický kapitál",
+
+          "sociální kapitál", "spolupráce", "soutěž", "kompetence", "konflikt", "role",
+          "konflikt rolí", "konformita", "konsensus (shoda)", "kontrola",
+
+          "konvence", "kritika", "korupce", "loajalita", "motivace", "mravnost",
+          "morálka", "násilí", "norma", "naděje",
+
+          "odměna", "trest", "odpovědnost", "organizace", "otevřenost", "orientace",
+          "ovlivňování", "paměť", "poslušnost", "postoj",
+
+          "potenciál", "potřeba", "pověst", "povinnost", "praxe", "preference", "prestiž",
+          "prostředí", "přátelství", "předsudek",
+
+          "racionalita", "reciprocita", "regulace", "revoluce", "rezignace", "rovnováha",
+          "rozhodování", "řád", "sankce", "socializace",
+
+          "solidarita", "strategie", "svoboda", "systém", "tabu", "tolerance", "tradice",
+          "sociální učení", "vlastnost", "vztah", "zájem"
