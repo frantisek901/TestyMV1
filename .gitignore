@@ -2,3 +2,4 @@
 *.xlsx
 zaslaniVysledku.R
 .Rproj.user
+.Rhistory
