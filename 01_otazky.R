@@ -2,7 +2,7 @@
 
 ## Encoding: windows-1250
 ## Vytvoøil: 2021-10-04 FrK
-## Upravil:  2021-10-04 FrK
+## Upravil:  2021-10-05 FrK
 
 ## NOTES:
 #
