@@ -222,12 +222,46 @@ df = read_xlsx("01OtazkyMv1_2021-10-13.xlsx") %>%
 # Uložení zpracovaných odpovìdí k bodování
 write_xlsx(df, "01OtazkyMV1_kBodovani.xlsx")
 
+## NOTE: Soubor s odpovìïmi pøipravený k bodování je tøeba nyní ruènì v Excelu otevøít,
+##       ruènì obodovat každou otázku, okomentovat otázky a uložit soubor pod novým jménem:
+##       '01OtazkyMV1_obodovano.xlsx'.
+
 
 
 # Naètení opravených výsledkù a pøíprava dopisu ---------------------------------------------
 
 # Naètení zpracovaných odpovìdí k bodování
-podklad = read_xlsx("01OtazkyMV1_obodovano.xlsx")
+podklad = read_xlsx("01OtazkyMV1_obodovano.xlsx") %>%
+
+  # Pøíprava shrnutí hodnocení jednotlivých otázek
+  group_by(email) %>%
+  mutate(
+    Celkem = sum(Body),
+    Text = paste0(
+      "Jako pojem è. ", Poøadí ," jste zvolil/a: \n'", Pojem,
+      "', \n\nten jste použil/a ve výzkumné otázce takto: \n'", `Výzkumná otázka`,
+      "' \n\nZa tuto výzkumnou otázku máte ", Body, " bod/u/ù.\n\n",
+      "Mùj komentáø k této výzkumné otázce je:\n", Koment),
+    Dopis = paste0(Text, collapse = "\n----------------------------------------------------\n"))
+
+# Pøíprava finálních dopisù
+dopisy = podklad %>% select(email, Celkem, Dopis) %>% unique() %>%
+  mutate(Dopis = paste0(
+    "Milá/ý studující, \n\n\n\nzasílám Vám vyhodnocení prvního prùbìžného testu ",
+    "ze cvièení/semináøe pøedmìtu KSA-MVT1/KSS-MV1/KSS-MV1Y, a to testu na formulaci výzkumných otázek. ",
+    "Pokud vùèi nìmu máte výhrady, neváhejte mne kontaktovat.\n\n",
+    "SHRNUTÍ TESTU:\n Celkem z testu máte: ",
+    Celkem, " bodù/bodu/body.",
+    "\n\n ******************* R E K A P I T U L A C E   T E S T U *******************\n\n",
+    Dopis,
+    "\n\n *******************  \n\n\n\nS úctou,\nFrantišek"))
+
+
+
+# Uložení dopisù ----------------------------------------------------------
+
+write_xlsx(dopisy, "dopisy.xlsx")
+
 
 
 
