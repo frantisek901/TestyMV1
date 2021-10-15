@@ -258,10 +258,14 @@ dopisy = podklad %>% select(email, Celkem, Dopis) %>% unique() %>%
 
 
 
-# Uložení dopisù ----------------------------------------------------------
+# Uložení dopisù a výsledkù -----------------------------------------------
 
+# Dopisy
 write_xlsx(dopisy, "dopisy.xlsx")
 
+# Výsledky
+dopisy %>% select(-Dopis) %>%
+  write_xlsx("01OtazkyMV1_Vysledky_2021-10-15.xlsx")
 
 
 # ### KONEC ### -----------------------------------------------------------
