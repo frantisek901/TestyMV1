@@ -2,7 +2,7 @@
 
 ## Encoding: windows-1250
 ## Vytvoøil: 2021-10-04 FrK
-## Upravil:  2021-10-05 FrK
+## Upravil:  2021-10-14 FrK
 
 ## NOTES:
 #
@@ -17,10 +17,12 @@ rm(list = ls())
 # Package
 library(dplyr)
 library(tibble)
+library(tidyr)
 library(readxl)
 library(writexl)
 
-
+# Moje vlastní funkce
+source("D:/ownCloud2/MujSkript.R")
 
 # Vektor s pojmy a další potøebné promìnné --------------------------------
 
@@ -189,8 +191,46 @@ names(los) = c("c4s", paste0("P", 1:10))
 df = tibble(lichý, los)
 
 # Uložení losovaèky
-
 write_xlsx(df, "test01_2021-10-12.xlsx")
+
+
+
+# Pøíprava odpovìdí na bodování -------------------------------------------
+
+# Naètení odpovìdí
+df = read_xlsx("01OtazkyMv1_2021-10-13.xlsx") %>%
+
+  # Ponechání identifikaèního e-mailu a vìcných promìnných
+  select(-c(1:10, 12:33)) %>%
+
+  # Pøejmenování vìcných promìnných, aby se s nimi dobøe dál pracovalo
+  prejmenuj(2:7, c("Pojem.1", "Výzkumná otázka.1", "Pojem.2", "Výzkumná otázka.2", "Pojem.3", "Výzkumná otázka.3")) %>%
+
+  # Pokud nìkdo nevyplnil ani první výzkumnou otázku, jeho data odstraníme
+  filter(!is.na(`Výzkumná otázka.1`)) %>%
+
+  # Pøevedeme data do dlouhé formy a oddìlíme v názvu typ údaje od jeho poøadí
+  pivot_longer(2:7) %>% separate(name, into = c("Typ", "Poøadí"), sep = "\\.") %>%
+
+  # Nyní jsou pojem a otázka na rùzných øádcích, tímto je dáme na spoleèný øádek
+  pivot_wider(id_cols = c(email, Typ, Poøadí), names_from = Typ) %>%
+
+  # Vytvoøíme si nové prázdné promìnné, kam ruènì dopíšu body (Body) a pøípadný komentáø (Koment)
+  mutate(Body = NA_real_, Koment = NA_character_)
+
+
+# Uložení zpracovaných odpovìdí k bodování
+write_xlsx(df, "01OtazkyMV1_kBodovani.xlsx")
+
+
+
+# Naètení opravených výsledkù a pøíprava dopisu ---------------------------------------------
+
+# Naètení zpracovaných odpovìdí k bodování
+podklad = read_xlsx("01OtazkyMV1_obodovano.xlsx")
+
+
+
 
 
 
